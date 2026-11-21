@@ -2,24 +2,96 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#14243a"><title>Öğretmenim – Ders Zili</title>
+<meta name="theme-color" content="#14243a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Öğretmenim"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest"><title>Öğretmenim – Ders Zili</title>
 <style>
-:root{color-scheme:dark;--bg:#0d1726;--panel:#17263a;--muted:#a9b8ca;--accent:#54d6a1;--line:#30435b}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#14243a,#0b1421 70%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f4f7fb;min-height:100vh;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}main{max-width:560px;margin:0 auto;padding:26px 0 34px}.top{text-align:center;margin-bottom:20px}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:2px}.top h1{font-size:29px;margin:7px 0 4px}.sub{color:var(--muted);font-size:14px}.clock{background:#0b1421;border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;margin:16px 0}.time{font-size:48px;font-weight:800;letter-spacing:1px;font-variant-numeric:tabular-nums}.date{color:var(--muted);margin-top:4px}.status{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}.status small{color:var(--muted);text-transform:uppercase;letter-spacing:1.3px;font-weight:700}.status h2{font-size:23px;margin:9px 0}.status p{margin:0;color:var(--muted);line-height:1.5}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.btn{border:0;border-radius:15px;padding:16px 12px;font-size:16px;font-weight:800;color:#102033;background:var(--accent);min-height:56px}.btn.secondary{background:#263a53;color:#f4f7fb;border:1px solid #405773}.btn:active{transform:scale(.98)}.btn:disabled{opacity:.55}.notice{font-size:12px;color:var(--muted);line-height:1.5;margin:12px 3px}.section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:14px}.section h3{margin:0 0 12px;font-size:17px}.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}.row:last-child{border:0}.row span:last-child{color:var(--muted);text-align:right}.pill{display:inline-block;border-radius:99px;background:#203a4a;color:var(--accent);padding:5px 9px;font-size:12px;font-weight:700}.todaylist{max-height:310px;overflow:auto}.current{background:#244236;border-radius:10px;padding:9px;margin:2px -8px}.foot{text-align:center;color:#8394a9;font-size:11px;margin:20px 0 0}.dayselect{width:100%;padding:12px;border-radius:12px;background:#0d1929;color:white;border:1px solid var(--line);font-size:15px}
+:root{color-scheme:dark;--bg:#0d1726;--panel:#17263a;--muted:#a9b8ca;--accent:#54d6a1;--line:#30435b}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#14243a,#0b1421 70%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f4f7fb;min-height:100vh;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}main{max-width:560px;margin:0 auto;padding:26px 0 34px}.top{text-align:center;margin-bottom:20px}.appicon{width:88px;height:88px;object-fit:cover;border-radius:22px;display:block;margin:0 auto 12px;box-shadow:0 8px 24px #0006}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:2px}.top h1{font-size:29px;margin:7px 0 4px}.sub{color:var(--muted);font-size:14px}.clock{background:#0b1421;border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;margin:16px 0}.time{font-size:48px;font-weight:800;letter-spacing:1px;font-variant-numeric:tabular-nums}.date{color:var(--muted);margin-top:4px}.status{margin:16px 0;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}.status small{color:var(--muted);text-transform:uppercase;letter-spacing:1.3px;font-weight:700}.status h2{font-size:23px;margin:9px 0}.status p{margin:0;color:var(--muted);line-height:1.5}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.btn{border:0;border-radius:15px;padding:16px 12px;font-size:16px;font-weight:800;color:#102033;background:var(--accent);min-height:56px}.btn.secondary{background:#263a53;color:#f4f7fb;border:1px solid #405773}.btn:active{transform:scale(.98)}.btn:disabled{opacity:.55}.notice{font-size:12px;color:var(--muted);line-height:1.5;margin:12px 3px}.section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:14px}.section h3{margin:0 0 12px;font-size:17px}.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}.row:last-child{border:0}.row span:last-child{color:var(--muted);text-align:right}.pill{display:inline-block;border-radius:99px;background:#203a4a;color:var(--accent);padding:5px 9px;font-size:12px;font-weight:700}.todaylist{max-height:310px;overflow:auto}.current{background:#244236;border-radius:10px;padding:9px;margin:2px -8px}.foot{text-align:center;color:#8394a9;font-size:11px;margin:20px 0 0}.dayselect{width:100%;padding:12px;border-radius:12px;background:#0d1929;color:white;border:1px solid var(--line);font-size:15px;margin:4px 0 10px}label.notice{display:block;margin:7px 2px 2px}
 </style></head>
 <body><main>
-<header class="top"><div class="eyebrow">KİŞİSEL ÖĞRETMEN ASİSTANI</div><h1>ÖĞRETMENİM</h1><div class="sub">Ders zili ve sesli hatırlatıcı</div></header>
+<header class="top"><img class="appicon" src="ogretmenim-icon.png" alt="Öğretmenim uygulama simgesi"><div class="eyebrow">KİŞİSEL ÖĞRETMEN ASİSTANI</div><h1>ÖĞRETMENİM</h1><div class="sub">Ders zili ve sesli hatırlatıcı</div></header>
 <div class="clock"><div class="time" id="clock">--:--:--</div><div class="date" id="date">Tarih yükleniyor</div></div>
 <section class="status"><small id="statusLabel">SİSTEM BEKLEMEDE</small><h2 id="headline">Ders zilini başlat</h2><p id="detail">Başlat düğmesine bastığında bugünün ders programını takip eder ve ders giriş-çıkışlarında sesli uyarı verir.</p></section>
 <div class="actions"><button class="btn" id="startBtn">▶ BAŞLAT</button><button class="btn secondary" id="testBtn">🔊 SESİ DENE</button></div>
 <p class="notice">Uyarıların zamanında gelmesi için Safari sayfası açık ve iPhone ekranı etkin kalmalıdır. iPhone, web sayfası kapalıyken veya telefon kilitliyken sesli alarmı güvenilir biçimde çalıştırmayabilir.</p>
+<section class="section" id="cloudSection">
+<h3>☁️ Bulut ve program düzenleme</h3>
+<div class="row"><span>Bağlantı</span><span id="cloudStatus">Firebase hazırlanıyor…</span></div>
+<div class="row"><span>Hesap</span><span id="userEmail">Giriş yapılmadı</span></div>
+<div class="actions" style="margin-bottom:8px"><button class="btn" id="loginBtn">Google ile giriş</button><button class="btn secondary" id="logoutBtn" disabled>Çıkış yap</button></div>
+<p class="notice">Programı farklı cihazlarda eşitlemek ve değiştirmek için Google hesabınızla giriş yapın.</p>
+<h3 style="margin-top:18px">Ders ekle / düzenle</h3>
+<label class="notice" for="editDay">Gün</label><select class="dayselect" id="editDay"><option value="1">Pazartesi</option><option value="2">Salı</option><option value="3">Çarşamba</option><option value="4">Perşembe</option><option value="5">Cuma</option></select>
+<label class="notice" for="editPeriod">Ders saati</label><select class="dayselect" id="editPeriod"></select>
+<label class="notice" for="editClass">Sınıf</label><input id="editClass" class="dayselect" placeholder="Örn. 12MAKC" autocomplete="off">
+<label class="notice" for="editSubject">Ders adı</label><input id="editSubject" class="dayselect" placeholder="Örn. Hidrolik Pnömatik" autocomplete="off">
+<div class="actions"><button class="btn" id="saveLessonBtn">☁️ Kaydet ve eşitle</button><button class="btn secondary" id="deleteLessonBtn">Dersi kaldır</button></div>
+<p class="notice" id="editMessage">Bir gün ve ders seçerek bilgileri düzenleyebilirsiniz.</p>
+</section>
 <section class="section"><h3>Bugünün programı</h3><div class="pill" id="dayName">—</div><div class="todaylist" id="todayList"></div></section>
 <section class="section"><h3>Ders saatleri</h3><div id="bellList"></div></section>
 <div class="foot">Program başlangıcı: 16.10.2026 · Öğretmen: Vedat Tuncer</div>
 </main>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyAM8IOY8e6--cdHbmv2ybKQTMCtK-bbhNM",
+  authDomain: "ogretmenim-ders-programi.firebaseapp.com",
+  projectId: "ogretmenim-ders-programi",
+  storageBucket: "ogretmenim-ders-programi.firebasestorage.app",
+  messagingSenderId: "780499477961",
+  appId: "1:780499477961:web:ba13474fedc642b469b418"
+};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth();
+const db=firebase.firestore();
+let cloudReady=false, cloudDocs={}, currentUser=null;
+const dayKeys={1:'pazartesi',2:'sali',3:'carsamba',4:'persembe',5:'cuma'};
+const dayLabels={1:'Pazartesi',2:'Salı',3:'Çarşamba',4:'Perşembe',5:'Cuma'};
+function docId(day,period){return dayKeys[day]+'_'+period}
+function setCloudStatus(t){const el=document.getElementById('cloudStatus');if(el)el.textContent=t}
+function applyCloudDoc(id,data){let day=Number(Object.keys(dayKeys).find(k=>dayKeys[k]===id.split('_')[0]));let period=Number(id.split('_').pop());if(!day||!period||period<1||period>11)return; schedule[day]=schedule[day]||{};if(data.aktif===false){delete schedule[day][period];}else if(data.sinif||data.ders){schedule[day][period]=[data.sinif||'',data.ders||''];}}
+function startCloudSync(){
+  db.collection('dersProgrami').onSnapshot(snapshot=>{
+    cloudDocs={}; snapshot.forEach(doc=>{cloudDocs[doc.id]=doc.data();applyCloudDoc(doc.id,doc.data());});
+    cloudReady=true;renderDay(new Date().getDay());setCloudStatus('Bağlandı · Eşitlendi');
+  },err=>{setCloudStatus('Bağlantı hatası');console.error(err);});
+}
+function refreshAuthUI(){
+  document.getElementById('userEmail').textContent=currentUser?(currentUser.email||'Google hesabı'):'Giriş yapılmadı';
+  document.getElementById('loginBtn').disabled=!!currentUser;
+  document.getElementById('logoutBtn').disabled=!currentUser;
+  document.getElementById('saveLessonBtn').disabled=!currentUser;
+  document.getElementById('deleteLessonBtn').disabled=!currentUser;
+  setCloudStatus(currentUser?'Google hesabı bağlı':'Program görüntüleniyor · Düzenlemek için giriş yapın');
+}
+auth.onAuthStateChanged(user=>{currentUser=user;refreshAuthUI();});
+document.addEventListener('DOMContentLoaded',()=>{
+  const period=document.getElementById('editPeriod');
+  period.innerHTML=bells.map((b,i)=>`<option value="${i+1}">${i+1}. ders · ${b[0]}–${b[1]}</option>`).join('');
+  document.getElementById('editDay').addEventListener('change',loadEditorFields);
+  period.addEventListener('change',loadEditorFields);
+  document.getElementById('loginBtn').addEventListener('click',async()=>{try{const provider=new firebase.auth.GoogleAuthProvider();await auth.signInWithPopup(provider);}catch(e){if(e.code==='auth/popup-blocked'||e.code==='auth/popup-closed-by-user'){try{await auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())}catch(x){setCloudStatus('Giriş başarısız: '+x.message)}}else setCloudStatus('Giriş başarısız: '+e.message)}});
+  document.getElementById('logoutBtn').addEventListener('click',()=>auth.signOut());
+  document.getElementById('saveLessonBtn').addEventListener('click',saveLesson);
+  document.getElementById('deleteLessonBtn').addEventListener('click',deleteLesson);
+  auth.getRedirectResult().catch(e=>setCloudStatus('Giriş başarısız: '+e.message));
+  loadEditorFields();
+});
+function loadEditorFields(){const d=Number(document.getElementById('editDay').value),p=Number(document.getElementById('editPeriod').value);const item=schedule[d]?.[p];document.getElementById('editClass').value=item?.[0]||'';document.getElementById('editSubject').value=item?.[1]||'';}
+async function saveLesson(){
+ if(!currentUser){setEditMessage('Önce Google hesabınızla giriş yapın.');return;}
+ const day=Number(document.getElementById('editDay').value),period=Number(document.getElementById('editPeriod').value),sinif=document.getElementById('editClass').value.trim(),ders=document.getElementById('editSubject').value.trim();
+ if(!sinif||!ders){setEditMessage('Sınıf ve ders adı alanlarını doldurun.');return;}
+ const id=docId(day,period),bell=bells[period-1];const data={gun:dayLabels[day],dersNo:period,baslangic:bell[0],bitis:bell[1],sinif,ders,aktif:true,guncelleme:firebase.firestore.FieldValue.serverTimestamp(),guncelleyen:currentUser.email||''};
+ try{await db.collection('dersProgrami').doc(id).set(data,{merge:true});schedule[day]=schedule[day]||{};schedule[day][period]=[sinif,ders];renderDay(new Date().getDay());setEditMessage('Kaydedildi. Diğer cihazlarda da eşitlenecek.');}catch(e){setEditMessage('Kaydedilemedi: '+e.message);}
+}
+async function deleteLesson(){if(!currentUser){setEditMessage('Önce Google hesabınızla giriş yapın.');return;}const day=Number(document.getElementById('editDay').value),period=Number(document.getElementById('editPeriod').value),id=docId(day,period),bell=bells[period-1];try{await db.collection('dersProgrami').doc(id).set({gun:dayLabels[day],dersNo:period,baslangic:bell[0],bitis:bell[1],aktif:false,guncelleme:firebase.firestore.FieldValue.serverTimestamp(),guncelleyen:currentUser.email||''},{merge:true});if(schedule[day])delete schedule[day][period];document.getElementById('editClass').value='';document.getElementById('editSubject').value='';renderDay(new Date().getDay());setEditMessage('Ders programdan kaldırıldı ve diğer cihazlarla eşitlendi.');}catch(e){setEditMessage('İşlem yapılamadı: '+e.message);}}
+function setEditMessage(t){document.getElementById('editMessage').textContent=t}
+
 const bells=[['08:45','09:25'],['09:35','10:15'],['10:25','11:05'],['11:15','11:55'],['12:00','12:40'],['13:20','14:00'],['14:10','14:50'],['15:00','15:40'],['15:50','16:30'],['16:40','17:20'],['17:30','18:10']];
 const dayNames=['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
-const schedule={
+let schedule={
 1:{1:['9MAKH','Temel İmalat İşlemleri'],2:['9MAKH','Temel İmalat İşlemleri'],3:['9MAKH','Temel İmalat İşlemleri'],4:['9MAKH','Temel İmalat İşlemleri'],5:['9MAKH','Temel İmalat İşlemleri'],6:['9MAKH','Temel İmalat İşlemleri'],7:['9MAKH','Temel İmalat İşlemleri'],8:['9MAKH','Temel İmalat İşlemleri'],9:['12MAKE','Hidrolik Pnömatik']},
 2:{1:['9MAKI','Temel İmalat İşlemleri'],2:['9MAKI','Temel İmalat İşlemleri'],3:['9MAKI','Temel İmalat İşlemleri'],4:['9MAKI','Temel İmalat İşlemleri'],5:['9MAKI','Temel İmalat İşlemleri'],6:['9MAKI','Temel İmalat İşlemleri'],7:['9MAKI','Temel İmalat İşlemleri'],8:['9MAKI','Temel İmalat İşlemleri'],9:['12MAKE','Hidrolik Pnömatik']},
 3:{1:['9MAKG','Temel İmalat İşlemleri'],2:['9MAKG','Temel İmalat İşlemleri'],3:['9MAKG','Temel İmalat İşlemleri'],4:['9MAKG','Temel İmalat İşlemleri'],5:['9MAKG','Temel İmalat İşlemleri'],6:['9MAKG','Temel İmalat İşlemleri'],7:['9MAKG','Temel İmalat İşlemleri'],8:['9MAKG','Temel İmalat İşlemleri']},
@@ -35,10 +107,10 @@ function renderBells(){ $('bellList').innerHTML=bells.map((b,i)=>`<div class="ro
 function currentEvent(now){let d=now.getDay(),m=now.getHours()*60+now.getMinutes(),sc=todaySchedule(d);for(let i=0;i<11;i++){let [st,en]=bells[i],s=mins(st),e=mins(en),item=sc[i+1];if(m>=s&&m<e)return {type:'lesson',period:i+1,item,start:st,end:en};if(m>=e&&i<10&&m<mins(bells[i+1][0]))return {type:'break',period:i+1,next:i+2,item,nextItem:sc[i+2],start:en,end:bells[i+1][0],lunch:(i===4)}}return null}
 function nextEvent(now){let d=now.getDay(),m=now.getHours()*60+now.getMinutes(),sc=todaySchedule(d);for(let i=0;i<11;i++){let st=mins(bells[i][0]),en=mins(bells[i][1]);if(st>m)return {kind:'start',period:i+1,time:bells[i][0],item:sc[i+1]};if(en>m)return {kind:'end',period:i+1,time:bells[i][1],item:sc[i+1]}}return null}
 function update(){let now=new Date();$('clock').textContent=now.toLocaleTimeString('tr-TR');$('date').textContent=now.toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});if(lastDay!==now.toDateString()){lastDay=now.toDateString();renderDay(now.getDay());seen.clear()}let ev=currentEvent(now);if(ev?.type==='lesson'&&ev.item){$('statusLabel').textContent='ŞU ANDA DERS ZAMANI';$('headline').textContent=ev.item[0]+' · '+ev.period+'. ders';$('detail').textContent=ev.item[1]+' · '+ev.start+'–'+ev.end;}else if(ev?.type==='break'){$('statusLabel').textContent=ev.lunch?'ÖĞLE ARASI':'TENEFFÜS';$('headline').textContent=ev.lunch?'Yemek vakti':'Teneffüs zamanı';$('detail').textContent=ev.nextItem?`Sonraki ders: ${ev.nextItem[0]} · ${ev.nextItem[1]} · ${bells[ev.next-1][0]}`:'Bir sonraki dersiniz bulunmuyor.'}else{$('statusLabel').textContent='DERS DIŞI ZAMAN';$('headline').textContent='Ders programı dışında';$('detail').textContent='Bir sonraki ders başlangıcı bekleniyor.'}
-if(running){let day=now.getDay(),date=now.toDateString(),m=now.getHours()*60+now.getMinutes();for(let i=0;i<11;i++){let [st,en]=bells[i],s=mins(st),e=mins(en),item=todaySchedule(day)[i+1];if(m===s&&item){fire(date+'-'+i+'-start',`${item[0]} sınıfında ${item[1]} dersiniz başlıyor.`)}if(m===e&&item){let lunch=i===4;let hasNext=!!todaySchedule(day)[i+2];fire(date+'-'+i+'-end',lunch?'Beşinci dersiniz bitti. Öğle yemeği zamanı.':hasNext?'Dersiniz bitti. Teneffüs zamanı.':'Dersiniz bitti. Bugünkü ders programınız tamamlandı.');}}}
+if(running){let day=now.getDay(),date=now.toDateString(),m=now.getHours()*60+now.getMinutes();for(let i=0;i<11;i++){let [st,en]=bells[i],s=mins(st),e=mins(en),item=todaySchedule(day)[i+1];if(item&&m===s-5){fire(date+'-'+i+'-pre',`Beş dakika sonra ${item[0]} sınıfında ${item[1]} dersiniz başlayacak.`)}if(m===s&&item){fire(date+'-'+i+'-start',`${item[0]} sınıfında ${item[1]} dersiniz başladı.`)}if(m===e&&item){let lunch=i===4;let hasNext=!!todaySchedule(day)[i+2];fire(date+'-'+i+'-end',lunch?'Beşinci dersiniz bitti. Öğle yemeği zamanı.':hasNext?'Dersiniz bitti. Teneffüs zamanı.':'Dersiniz bitti. Bugünkü ders programınız tamamlandı.');}}}
 let n=nextEvent(now);if(n){let label=n.kind==='start'?'Ders başlangıcı':'Ders bitişi';$('detail').textContent += ` · Sonraki: ${label} ${n.time}`;}}
 function fire(key,msg){if(seen.has(key))return;seen.add(key);say(msg);$('headline').textContent=msg;$('statusLabel').textContent='SESli UYARI';}
-$('startBtn').addEventListener('click',()=>{running=!running;$('startBtn').textContent=running?'■ DURDUR':'▶ BAŞLAT';$('startBtn').style.background=running?'#ffbd69':'var(--accent)';if(running){seen.clear();say('Öğretmenim ders zili başladı. Bugünkü programınız takip ediliyor.');$('statusLabel').textContent='SİSTEM ÇALIŞIYOR';$('headline').textContent='Ders programınız takip ediliyor';$('detail').textContent='Ders giriş ve çıkışlarında sesli uyarı alacaksınız.'}else{window.speechSynthesis?.cancel();$('statusLabel').textContent='SİSTEM DURDURULDU';$('headline').textContent='Hatırlatıcı durduruldu';$('detail').textContent='Yeniden başlatmak için BAŞLAT düğmesine basın.'}});
-$('testBtn').addEventListener('click',()=>say('Ses kontrolü. Öğretmenim ders zili hazır.'));
-renderBells();renderDay(new Date().getDay());update();setInterval(update,1000);
+$('startBtn').addEventListener('click',()=>{running=!running;$('startBtn').textContent=running?'■ DURDUR':'▶ BAŞLAT';$('startBtn').style.background=running?'#ffbd69':'var(--accent)';if(running){seen.clear();say('Öğretmenim ders zili başladı. Bugünkü programınız takip ediliyor.');$('statusLabel').textContent='SİSTEM ÇALIŞIYOR';$('headline').textContent='Ders programınız takip ediliyor';$('detail').textContent='Ders başlamadan 5 dakika önce, ders girişinde ve ders bitiminde sesli uyarı alacaksınız.'}else{window.speechSynthesis?.cancel();$('statusLabel').textContent='SİSTEM DURDURULDU';$('headline').textContent='Hatırlatıcı durduruldu';$('detail').textContent='Yeniden başlatmak için BAŞLAT düğmesine basın.'}});
+$('testBtn').addEventListener('click',()=>say('Ses kontrolü. Öğretmenim ders zili hazır. Beş dakika önceki ders uyarısı da etkin.'));
+renderBells();renderDay(new Date().getDay());update();setInterval(update,1000);startCloudSync();
 </script></body></html>

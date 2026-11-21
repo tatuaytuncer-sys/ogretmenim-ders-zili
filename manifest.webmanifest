@@ -1,0 +1,13 @@
+{
+  "name": "Öğretmenim – Ders Zili",
+  "short_name": "Öğretmenim",
+  "lang": "tr-TR",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d1726",
+  "theme_color": "#14243a",
+  "icons": [
+    {"src": "ogretmenim-icon.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any"},
+    {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any"}
+  ]
+}
