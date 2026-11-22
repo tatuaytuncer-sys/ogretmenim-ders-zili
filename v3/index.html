@@ -105,7 +105,7 @@ function reportHtml(){
  html+=table('Atölye bilgileri',['Atölye adı','Aktif tezgâh sayısı','Öğretmenler','Yardımcı öğrenciler'],[[(data.workshopName||''),(data.benchCount||5),(data.teachers||[]).join(', '),(data.helpers||[]).map(studentName).join(', ')]]);
   html+=table('Atölye grupları',['Grup','Öğretmen','Öğrenciler'],groups);
  html+=table('Malzeme kontrolleri',['Tarih','Öğrenci','Kontrol edilenler','Diğer'],materials);
- html+=table('Termin değerlendirmeleri',['Öğrenci','Termin','Durum','Puan'],terms);
+ html+=table('Temrin değerlendirmeleri',['Öğrenci','Termin','Durum','Puan'],terms);
  html+=table('Notlar',['Öğrenci','Tür','Açıklama','Puan'],grades);
   let averages=(data.students||[]).map(st=>{let g=data.grades?.[st.id]||{},keys=['written','term','project','performance'],av=keys.map(k=>{let a=(g[k]||[]).map(x=>+x.score).filter(Number.isFinite);return a.length?a.reduce((x,y)=>x+y,0)/a.length:null});let auto=av.every(x=>x!==null)?av.reduce((x,y)=>x+y,0)/4:null;let total=data.manualOverall?.[st.id]??auto;return [studentName(st.id),...av.map(x=>x===null?'':x.toFixed(2)),total===null?'':Number(total).toFixed(2),data.manualOverall?.[st.id]!==undefined?'Manuel':'Otomatik']});
   html+=table('Not ortalamaları',['Öğrenci','Yazılı','Termin','Proje','Performans','Genel','Hesaplama'],averages);
