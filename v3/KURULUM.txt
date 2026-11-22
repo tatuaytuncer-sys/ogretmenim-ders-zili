@@ -1,0 +1,13 @@
+DERS ZİLİ v3 - KURULUM
+
+1) ZIP içindeki index.html, manifest.webmanifest, apple-touch-icon.png ve ogretmenim-icon.png dosyalarını GitHub deposunun kök dizinine yükleyin. index.html dosyasını eskisinin yerine koyun; diğer v2 kayıtları ve Firestore dersProgrami koleksiyonu silinmez.
+2) Firebase Console > Firestore Database > Rules bölümünde mevcut kurallarınızı yedekleyin. FIRESTORE_RULES_V3.txt içindeki ogretmenV3 kuralını mevcut kurallarınıza ekleyin. Mevcut v2 kurallarını silmeyin veya değiştirmeyin.
+3) Google Authentication ve yetkili alan adı tatuaytuncer-sys.github.io etkin olmalı.
+4) Uygulamada Ayarlar > Google ile giriş yap. Kişisel v3 verileri ogretmenV3/{Firebase UID} belgesinde tutulur.
+5) PDF/Excel/Word/fotoğraf okuma için internet bağlantısı gerekir. Fotoğraf OCR sonuçları ve karmaşık tablo düzenleri mutlaka kontrol edilmelidir.
+
+ÖNEMLİ SINIRLAMALAR
+- Bu ilk v3 paketi işlevsel başlangıç sürümüdür. Kamera/PDF/Excel/Word aktarımı OCR/metin çıkarımı + satır ayrıştırma ile çalışır; okul çizelgesinin biçimine göre bazı satırların elle düzeltilmesi gerekebilir.
+- Atölye grup dağılımı ve 30 kişilik sınıf yerleşimi yönetilebilir. Mengene başına öğrenci yerleştirme ve grup öğrencileriyle otomatik eşleştirme bu sürümde görsel şema düzeyindedir; gerçek öğrenci eşleştirme arayüzü sonraki iyileştirme adımıdır.
+- iPhone Safari arka planda/ekran kilitliyken ses anonsu garanti edilemez.
+- Google/Firebase yapılandırması önceki v2 projesinden devralınmıştır.
