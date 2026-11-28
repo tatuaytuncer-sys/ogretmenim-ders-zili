@@ -1,13 +1,44 @@
-DERS ZİLİ v3 - KURULUM
+ÖĞRETMENİM DERS ZİLİ v3 – GÜNCELLEME PAKETİ
 
-1) ZIP içindeki index.html, manifest.webmanifest, apple-touch-icon.png ve ogretmenim-icon.png dosyalarını GitHub deposunun kök dizinine yükleyin. index.html dosyasını eskisinin yerine koyun; diğer v2 kayıtları ve Firestore dersProgrami koleksiyonu silinmez.
-2) Firebase Console > Firestore Database > Rules bölümünde mevcut kurallarınızı yedekleyin. FIRESTORE_RULES_V3.txt içindeki ogretmenV3 kuralını mevcut kurallarınıza ekleyin. Mevcut v2 kurallarını silmeyin veya değiştirmeyin.
-3) Google Authentication ve yetkili alan adı tatuaytuncer-sys.github.io etkin olmalı.
-4) Uygulamada Ayarlar > Google ile giriş yap. Kişisel v3 verileri ogretmenV3/{Firebase UID} belgesinde tutulur.
-5) PDF/Excel/Word/fotoğraf okuma için internet bağlantısı gerekir. Fotoğraf OCR sonuçları ve karmaşık tablo düzenleri mutlaka kontrol edilmelidir.
+BU PAKETTE YAPILANLAR
+- Sınıf listeleri sınıf sınıf ayrıldı; öğrenci numaraları görünür.
+- Öğrenci yönetiminde tek tek seçim, görünenleri seçme/seçimi kaldırma ve seçilen öğrencileri toplu silme eklendi.
+- Günlük yoklamada her öğrenci için “Geldi” kutusu ve seçilenleri toplu geldi/gelmedi işaretleme eklendi.
+- Atölye tezgâhlarında 4 kişilik ve 6 kişilik mengene düzeni seçilebilir.
+- Çevrimdışı uygulama kabuğu için service worker eklendi; Firebase Firestore yerel önbelleği etkinleştirildi.
+- PWA manifestine Android için 192 ve 512 piksel simgeler eklendi.
+- Ders başlangıç saatleri 08:45 olarak korundu; eksik tırnak işareti nedeniyle oluşabilecek JavaScript hatası düzeltildi.
+- Sınıflar, derslikler, atölyeler ve laboratuvarlar kullanım türüne göre farklı renklerle gösterilir. Haftalık çizelge, sınıf listesi, oturma düzeni ve atölye yerleşiminde renk ayrımı kullanılır.
+- Ana sayfaya aynı anda aktif öğretmen sayacı eklendi. Google hesabıyla giriş yapan benzersiz hesaplar sayılır; 30 saniyede bir yenilenir ve 90 saniyeden uzun süredir sinyal göndermeyen oturumlar aktif sayılmaz.
+- Aynı uygulama hem depo kökünde hem /v3/ klasöründe bulunur.
 
-ÖNEMLİ SINIRLAMALAR
-- Bu ilk v3 paketi işlevsel başlangıç sürümüdür. Kamera/PDF/Excel/Word aktarımı OCR/metin çıkarımı + satır ayrıştırma ile çalışır; okul çizelgesinin biçimine göre bazı satırların elle düzeltilmesi gerekebilir.
-- Atölye grup dağılımı ve 30 kişilik sınıf yerleşimi yönetilebilir. Mengene başına öğrenci yerleştirme ve grup öğrencileriyle otomatik eşleştirme bu sürümde görsel şema düzeyindedir; gerçek öğrenci eşleştirme arayüzü sonraki iyileştirme adımıdır.
-- iPhone Safari arka planda/ekran kilitliyken ses anonsu garanti edilemez.
-- Google/Firebase yapılandırması önceki v2 projesinden devralınmıştır.
+GITHUB'A YÜKLEME
+1. ZIP'i bilgisayarda veya telefonda Dosyalar uygulamasında açın.
+2. GitHub deposunda Add file > Upload files bölümüne girin.
+3. Paketteki dosyaları aynı klasör yollarını koruyarak yükleyin. Mevcut dosyaların üzerine yazılacağını onaylayın.
+4. Commit changes ile kaydedin.
+5. GitHub Pages güncellemesi tamamlandıktan sonra uygulamayı https://tatuaytuncer-sys.github.io/ogretmenim-ders-zili/v3/ adresinden açın.
+
+FIREBASE VE VERİLER
+- Firebase yapılandırması ve ogretmenV3 koleksiyon adı korunmuştur.
+- Aktif kullanıcı sayacının çalışması için Firebase Console > Firestore Database > Rules bölümünde aşağıdaki `activeSessions` kuralını mevcut kuralların içine ekleyip Publish yapın. Mevcut `ogretmenV3` ve v2 kurallarını silmeyin veya değiştirmeyin.
+
+  match /activeSessions/{userId} {
+    allow read: if request.auth != null;
+    allow create, update, delete: if request.auth != null && request.auth.uid == userId;
+  }
+
+- Sayaç yalnızca oturum kimliği ve son etkinlik zamanını tutar; öğrenci verilerine erişim sağlamaz. Kurallar yayımlanmazsa sayaç sayı gösteremez; diğer uygulama özellikleri etkilenmez.
+- Daha önce Google hesabıyla eşitlenmiş veriler aynı hesapla giriş yapıldığında buluttan alınır.
+- Her cihazda ilk açılış ve ilk Google girişi için internet gerekir. Uygulama dosyaları ve CDN kütüphaneleri ilk çevrimiçi açılışta önbelleğe alınır.
+- Çevrimdışıyken daha önce bu cihazda açılmış/önbelleğe alınmış uygulama ve bu cihazda kayıtlı veriler kullanılabilir. İnternet geldiğinde Firebase eşitlemesi yeniden denenir.
+- Yeni bir cihazda, daha önce indirilmemiş öğrenci ve program verilerine internet olmadan erişilemez.
+- Güvenlik için uygulama verilerini farklı cihazlarda kullanmadan önce Ayarlar > Verilerimi dışa aktar ile ayrıca yedek alın.
+
+CİHAZLARA EKLEME
+- iPhone/iPad: Safari'de uygulamayı açın > Paylaş > Ana Ekrana Ekle.
+- Android: Chrome'da uygulamayı açın > menü > Uygulamayı yükle / Ana ekrana ekle.
+- Bilgisayar: Chrome veya Edge'de adres çubuğundaki yükleme simgesini ya da menüdeki Uygulamayı yükle seçeneğini kullanın. Diğer tarayıcılarda web sayfası olarak açılabilir.
+
+NOT
+Çevrimdışı kullanım ilk açılıştan sonra aynı cihazdaki önbellek ve yerel kayıtlara dayanır. Google ile yeni giriş, buluttan ilk veri indirme, PDF/Excel/Word/OCR işlemleri ve cihazlar arası eşitleme için internet bağlantısı gerekir.

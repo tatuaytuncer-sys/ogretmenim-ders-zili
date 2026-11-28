@@ -4,6 +4,11 @@ service cloud.firestore {
     match /ogretmenV3/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
+    match /activeSessions/{userId} {
+      // Oturum sayısını yalnızca giriş yapmış kullanıcılar görebilir; herkes yalnızca kendi oturum kaydını yazabilir.
+      allow read: if request.auth != null;
+      allow create, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
     // Mevcut v2 koleksiyonunu burada değiştirmeyin.
   }
 }
