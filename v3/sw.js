@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ogretmenim-v3-shell-2026-11-28-tis-label';
+const CACHE_NAME = 'ogretmenim-v3-shell-2026-11-28-tis-fit';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './apple-touch-icon.png', './ogretmenim-icon.png', './icon-192.png', './icon-512.png'
