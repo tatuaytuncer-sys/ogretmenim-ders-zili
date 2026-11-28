@@ -89,7 +89,7 @@ function reportHtml(){
  let students=(data.students||[]).map(x=>[x.no||'',x.name,x.surname,data.classes.find(c=>c.id===x.classId)?.name||'']);
  let attendance=[];for(let [date,rec] of Object.entries(data.attendance||{}))for(let [id,status] of Object.entries(rec||{}))attendance.push([date,studentName(id),status]);
  let seats=[];for(let [cid,arr] of Object.entries(data.seats||{})){let cn=data.classes.find(c=>c.id===cid)?.name||cid;(arr||[]).forEach((id,i)=>{if(id)seats.push([cn,Math.floor(i/10)+1,Math.floor((i%10)/2)+1,i%2===0?'Sol':'Sağ',studentName(id)])})}
- let benches=(data.workbenchSeats||[]).map((id,i)=>id?[Math.floor(i/6)+1,(i%6)+1,studentName(id)]:null).filter(Boolean);
+ let benches=[];for(let i=0;i<6;i++)for(let j=0;j<6;j++){let id=(data.workbenchSeats||[])[i*6+j];if(id)benches.push(['Altıgen',i+1,j+1,studentName(id)])}for(let i=0;i<6;i++){let count=i<3?4:6;for(let j=0;j<count;j++){let id=(data.rectBenchSeats||[])[i*count+j];if(id)benches.push(['Dikdörtgen',i+1,j+1,studentName(id)])}}
  let groups=(data.groups||[]).map(g=>[g.name||'',(data.teachers||[])[g.teacher]||'',(g.students||[]).map(studentName).join(', ')]);
  let materials=[];for(let [date,rec] of Object.entries(data.materials||{}))for(let [id,r] of Object.entries(rec||{}))materials.push([date,studentName(id),['Ders defteri','Önlük','Eğe','Kitap','Diğer araç ve gereçler'].map((n,i)=>r[i]?n:'').filter(Boolean).join(', '),r.other||'']);
  let terms=[];for(let [id,rec] of Object.entries(data.terms||{}))for(let [n,r] of Object.entries(rec||{}))terms.push([studentName(id),n,r.status||'',r.score??'']);
@@ -100,7 +100,7 @@ function reportHtml(){
  html+=table('Öğrenciler',['No','Ad','Soyad','Sınıf'],students);
  html+=table('Devam kayıtları',['Tarih','Öğrenci','Durum'],attendance);
  html+=table('Oturma düzeni',['Sınıf','Sıra','Masa','Taraf','Öğrenci'],seats);
- html+=table('Atölye tezgâhları',['Tezgâh','Mengene','Öğrenci'],benches);
+ html+=table('Atölye tezgâhları',['Tezgâh türü','Tezgâh no','Mengene','Öğrenci'],benches);
  html+=table('Atölye grupları',['Grup','Öğretmen','Öğrenciler'],groups);
  html+=table('Malzeme kontrolleri',['Tarih','Öğrenci','Kontrol edilenler','Diğer'],materials);
  html+=table('Termin değerlendirmeleri',['Öğrenci','Termin','Durum','Puan'],terms);
